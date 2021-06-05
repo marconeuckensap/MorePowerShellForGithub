@@ -9,6 +9,7 @@ ConvertTo-SecureString |
 Set-Variable ss_token
 #user and token set to variable creds
 $creds = New-Object pscredential 'user’, $ss_token
+
 Set-GitHubAuthentication -SessionOnly `
 -Credential $creds
 # Testing to see if you are logged on.
