@@ -16,7 +16,7 @@ $headers =
 };
 $repo = 
 @{
-    repo = New-GitHubRepository -RepositoryName test_repo;
+    repo = New-GitHubRepository -RepositoryName test_repo -Private;
     description = 'An other repository created in powershell';
 
 } | ConvertTo-Json
