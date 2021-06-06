@@ -1,6 +1,13 @@
-function get-AuthHeader
+function Get-AuthHeader 
 {
-    $C = Get-Credential
+
+    param ($Credential)
+    # if statment if loggin is null: ps will ask the user for login credentials.
+    if ($Credential -eq $null)
+    {
+        $Credential = Read-Host -Prompt ’login’
+        #$Credential = Get-Credential
+    }
 
     $ss_token = Read-Host -AsSecureString -Prompt ’token’ |
     ConvertFrom-SecureString |
@@ -24,5 +31,3 @@ function get-AuthHeader
     Invoke-RestMethod -Headers $headers -Uri $api
     
 }
-
-
