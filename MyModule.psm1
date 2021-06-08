@@ -5,4 +5,4 @@ function Test-ScriptScope {
     Write-Output $var
 }
 
-# te vergelijken met impor .. in python.
+# tijdens het runnen van het script in powershell(ISE) komt meteen de inhoude van $var tevoorschijn 
