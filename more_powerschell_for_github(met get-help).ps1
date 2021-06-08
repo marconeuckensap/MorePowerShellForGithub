@@ -57,3 +57,17 @@ function Add-GitHubCollaborator
 
     Invoke-RestMethod -Headers $headers -Uri $api -body $Body -Method Put  
 }
+
+function Get-RepositoryInvitations 
+{
+    param 
+    (
+        $Owner, $RepositoryName, $OwnerGroup, $MailDomains
+    )
+
+     Get-AuthHeader -Credential $Credential
+
+    $global:api = "https://api.github.com/user/repository_invitations"
+    Invoke-RestMethod -Headers $headers -Uri $api -Method Get
+
+}
